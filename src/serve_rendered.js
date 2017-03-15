@@ -389,13 +389,14 @@ module.exports = function(options, repo, params, id, dataResolver) {
           }
 
           if (format == 'png') {
-            var usePngQuant =
-                (options.formatQuality || {}).pngQuantization === true;
-            if (usePngQuant) {
+//scl            var usePngQuant =
+//scl                (options.formatQuality || {}).pngQuantization === true;
+//scl            if (usePngQuant) {
               buffer = pngquant.compress(buffer, {
-                quality: [0, formatQuality || 90]
+//scl                quality: [0, formatQuality || 90]
+                  quality: [90, 90]
               });
-            }
+//scl            }
           }
 
           res.set({
